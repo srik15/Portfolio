@@ -4,16 +4,14 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-ink/8 px-6 py-10 sm:px-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-        <p className="font-display text-sm font-semibold text-ink">
+    <footer className="border-t border-ink/5 px-6 py-8 sm:px-10">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 sm:flex-row">
+        <p className="text-sm font-semibold text-ink">
           {profile.name}
-          <span className="ml-2 font-sans font-normal text-slate-mist">
-            · {profile.role}
-          </span>
+          <span className="ml-2 font-normal text-slate-mist">· {profile.role}</span>
         </p>
-        <p className="font-mono text-xs text-slate-mist">
-          © {year} · Built with intent
+        <p className="text-xs text-slate-mist">
+          © {year} · Built with React & Tailwind
         </p>
       </div>
     </footer>

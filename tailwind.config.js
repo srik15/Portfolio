@@ -9,11 +9,13 @@ export default {
         ink: palette.ink,
         paper: palette.paper,
         fog: palette.fog,
+        card: palette.card,
         hero: palette.heroBg,
         accent: {
           DEFAULT: palette.accent,
           bright: palette.accentBright,
           soft: palette.accentSoft,
+          light: palette.accentLight,
         },
         secondary: palette.secondary,
         slate: {
@@ -22,9 +24,13 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Syne", "system-ui", "sans-serif"],
-        sans: ["Figtree", "system-ui", "sans-serif"],
+        display: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
+      },
+      boxShadow: {
+        card: "0 4px 24px rgba(17, 24, 39, 0.06)",
+        "card-hover": "0 8px 32px rgba(93, 67, 218, 0.12)",
       },
       screens: {
         xs: "450px",
@@ -32,7 +38,6 @@ export default {
       animation: {
         "fade-up": "fadeUp 0.8s ease-out forwards",
         float: "float 8s ease-in-out infinite",
-        "grid-drift": "gridDrift 40s linear infinite",
       },
       keyframes: {
         fadeUp: {
@@ -40,12 +45,8 @@ export default {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         float: {
-          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
-          "50%": { transform: "translateY(-12px) rotate(1deg)" },
-        },
-        gridDrift: {
-          "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(60px)" },
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
     },

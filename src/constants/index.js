@@ -2,14 +2,16 @@ export const profile = {
   name: "Srinithi K",
   role: "AI Systems Engineer",
   location: "Chennai, India",
-  email: "sri@gmail.com",
+
+  email: "srinithi15k@gmail.com",
   summary:
     "AI systems engineer specializing in production-grade, cloud-native RAG and multi-agent architectures for real-world industrial applications — with a growing interest in AI at the edge of embedded and hardware-driven environments.",
   links: {
-    linkedin: "https://linkedin.com/in/sri",
+    linkedin: "https://linkedin.com/in/srinithik",
     github: "https://github.com/srik15",
     kaggle: "https://kaggle.com/srinithikmk",
     leetcode: "https://leetcode.com/u/Sri15nithi/",
+    resume: "/SRINITHI_K_FlowCV_Resume_2026-07-16.pdf",
   },
 };
 
@@ -18,7 +20,25 @@ export const navLinks = [
   { id: "experience", title: "Experience" },
   { id: "projects", title: "Projects" },
   { id: "skills", title: "Skills" },
+  { id: "education", title: "Education" },
+  { id: "certifications", title: "Certifications" },
   { id: "contact", title: "Contact" },
+];
+
+export const stats = [
+  { label: "Years Experience", value: "2+" },
+  { label: "Projects", value: "10+" },
+  { label: "Technologies", value: "15+" },
+  { label: "Passion", value: "100%" },
+];
+
+export const coreSkills = [
+  { name: "RAG & Agentic AI", level: 92 },
+  { name: "Machine Learning", level: 88 },
+  { name: "Deep Learning", level: 85 },
+  { name: "Python", level: 90 },
+  { name: "Cloud (GCP/AWS)", level: 82 },
+  { name: "MLOps", level: 78 },
 ];
 
 export const focusAreas = [
@@ -112,20 +132,31 @@ export const projects = [
     description:
       "Preprocessed conservation trap images, balanced classes, annotated with smart polygons in Roboflow, and trained YOLO v7–v9 with hyperparameter tuning for a rigorous model comparison.",
     tags: ["YOLO", "Computer Vision", "Roboflow", "Python"],
+    gradient: "from-indigo-950 via-purple-900 to-violet-700",
   },
   {
     name: "Convo Buddy",
     tagline: "RAG voice companion for patient care",
     description:
-      "Retrieval-augmented voice bot trained on a custom dataset for bedridden patients, with Firebase personalization and realtime health sensor data. Paper accepted: E-Companion — Revolutionizing Patient Mental Care.",
+      "Retrieval-augmented voice bot trained on a custom dataset for bedridden patients, with Firebase personalization and realtime health sensor data.",
     tags: ["RAG", "Voice AI", "Firebase", "Healthcare"],
+    gradient: "from-slate-900 via-indigo-900 to-purple-800",
   },
   {
     name: "Igniters",
     tagline: "TN EDII Finalist — smart street lighting",
     description:
-      "Realtime mobile and web control for sustainable street lighting with fault detection, ESP8266 sensor networks (LDR, rain, gas, humidity), and Firebase as the cloud backbone.",
+      "Realtime mobile and web control for sustainable street lighting with fault detection, ESP8266 sensor networks, and Firebase as the cloud backbone.",
     tags: ["IoT", "Firebase", "Android", "ESP8266"],
+    gradient: "from-gray-900 via-violet-950 to-indigo-800",
+  },
+  {
+    name: "Agentic RAG Platform",
+    tagline: "Production automotive AI assistant",
+    description:
+      "Multi-agent RAG system with hybrid retrieval, LangGraph orchestration, and GCP Cloud Run deployment for enterprise aftermarket workflows.",
+    tags: ["LangGraph", "GCP", "RAG", "FastAPI"],
+    gradient: "from-indigo-950 via-blue-950 to-purple-900",
   },
 ];
 
@@ -182,6 +213,13 @@ export const education = {
   location: "Chennai, India",
   period: "2021 – 2025",
   gpa: "CGPA 8.98 / 10.0",
+  coursework: [
+    "Machine Learning",
+    "Deep Learning",
+    "Data Structures",
+    "Cloud Computing",
+    "Computer Vision",
+  ],
 };
 
 export const certificates = [
@@ -189,31 +227,56 @@ export const certificates = [
     title: "Google Cloud Computing Foundation",
     org: "NPTEL — IIT Kharagpur",
     note: "ELITE Silver · Top 5%",
+    year: "2024",
   },
   {
     title: "Python for Data Science",
     org: "NPTEL — IIT Madras",
     note: "ELITE Silver",
+    year: "2024",
   },
   {
     title: "BEC Vantage Level B2",
     org: "Cambridge University",
     note: "Business English",
+    year: "2023",
   },
   {
     title: "Computer Vision Onramp",
     org: "MATLAB — MathWorks",
     note: null,
+    year: "2023",
   },
   {
     title: "Introduction to Probability and Data with R",
     org: "Coursera — Duke University",
     note: null,
+    year: "2023",
   },
   {
     title: "Machine Learning and its Applications using Python",
     org: "EduxLabs with Mechanica IIT Madras",
     note: null,
+    year: "2023",
+  },
+];
+
+export const achievements = [
+  {
+    title: "Kaggle Contributor",
+    description: "Active in ML competitions & datasets",
+  },
+  {
+    title: "Research Published",
+    description: "IEEE paper on wildlife recognition",
+  },
+  {
+    title: "Open Source",
+    description: "Projects on GitHub",
+  },
+  {
+    title: "Hackathon Finalist",
+    description: "EDII Tamil Nadu & IIT Indore",
   },
 ];
 
