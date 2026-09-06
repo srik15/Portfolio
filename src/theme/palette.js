@@ -1,21 +1,21 @@
 /**
- * Site color palette — edit values here and they apply everywhere.
+ * Site color palette — v3 paper editorial tokens.
  */
 export const palette = {
-  ink: "#111827",
-  paper: "#F8F9FD",
-  fog: "#F1F3F9",
-  card: "#FFFFFF",
-  slateSoft: "#4B5563",
-  slateMist: "#6B7280",
-  accent: "#5D43DA",
-  accentBright: "#7C5CFF",
-  accentSoft: "#EDE9FE",
-  accentLight: "#F3F0FF",
-  secondary: "#4338CA",
-  heroBg: "#F8F9FD",
-  gradientStart: "#5D43DA",
-  gradientEnd: "#312E81",
+  paper: "#F5F6F2",
+  paper2: "#FFFFFF",
+  ink: "#14181A",
+  inkSoft: "#454B47",
+  muted: "#767D77",
+  line: "#DCE0D8",
+  signal: "#1F6B4E",
+  signalTint: "#E4F0EA",
+  amber: "#B5651D",
+  amberTint: "#F7EBDD",
+  indigo: "#3B5BDB",
+  indigoTint: "#E9EDFB",
+  pipelineBg: "#EEF2FF",
+  pipelineLine: "#C5CAE9",
 };
 
 export function hexToRgbChannels(hex) {
@@ -29,24 +29,22 @@ export function applyPaletteToDom() {
 
   const root = document.documentElement;
   const map = {
-    "--ink": palette.ink,
     "--paper": palette.paper,
-    "--fog": palette.fog,
-    "--card": palette.card,
-    "--slate-soft": palette.slateSoft,
-    "--slate-mist": palette.slateMist,
-    "--accent": palette.accent,
-    "--accent-bright": palette.accentBright,
-    "--accent-soft": palette.accentSoft,
-    "--accent-light": palette.accentLight,
-    "--secondary": palette.secondary,
-    "--hero-bg": palette.heroBg,
-    "--gradient-start": palette.gradientStart,
-    "--gradient-end": palette.gradientEnd,
+    "--paper-2": palette.paper2,
+    "--ink": palette.ink,
+    "--ink-soft": palette.inkSoft,
+    "--muted": palette.muted,
+    "--line": palette.line,
+    "--signal": palette.signal,
+    "--signal-tint": palette.signalTint,
+    "--amber": palette.amber,
+    "--amber-tint": palette.amberTint,
+    "--indigo": palette.indigo,
+    "--indigo-tint": palette.indigoTint,
+    "--pipeline-bg": palette.pipelineBg,
+    "--pipeline-line": palette.pipelineLine,
     "--ink-rgb": hexToRgbChannels(palette.ink),
-    "--accent-rgb": hexToRgbChannels(palette.accent),
-    "--accent-bright-rgb": hexToRgbChannels(palette.accentBright),
-    "--secondary-rgb": hexToRgbChannels(palette.secondary),
+    "--signal-rgb": hexToRgbChannels(palette.signal),
   };
 
   Object.entries(map).forEach(([key, value]) => {

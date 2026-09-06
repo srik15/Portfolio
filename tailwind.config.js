@@ -6,48 +6,60 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: palette.ink,
-        paper: palette.paper,
-        fog: palette.fog,
-        card: palette.card,
-        hero: palette.heroBg,
-        accent: {
-          DEFAULT: palette.accent,
-          bright: palette.accentBright,
-          soft: palette.accentSoft,
-          light: palette.accentLight,
+        paper: {
+          DEFAULT: palette.paper,
+          2: palette.paper2,
         },
-        secondary: palette.secondary,
-        slate: {
-          soft: palette.slateSoft,
-          mist: palette.slateMist,
+        ink: {
+          DEFAULT: palette.ink,
+          soft: palette.inkSoft,
+        },
+        muted: palette.muted,
+        line: palette.line,
+        signal: {
+          DEFAULT: palette.signal,
+          tint: palette.signalTint,
+        },
+        amber: {
+          DEFAULT: palette.amber,
+          tint: palette.amberTint,
+        },
+        indigo: {
+          DEFAULT: palette.indigo,
+          tint: palette.indigoTint,
         },
       },
       fontFamily: {
-        display: ["Inter", "system-ui", "sans-serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
+        display: ['"Space Grotesk"', "system-ui", "sans-serif"],
+        sans: ['"IBM Plex Sans"', "system-ui", "sans-serif"],
+        mono: ['"Space Grotesk"', "system-ui", "sans-serif"],
       },
-      boxShadow: {
-        card: "0 4px 24px rgba(17, 24, 39, 0.06)",
-        "card-hover": "0 8px 32px rgba(93, 67, 218, 0.12)",
+      borderRadius: {
+        card: "18px",
+        cardLg: "20px",
+        pill: "999px",
+      },
+      maxWidth: {
+        content: "1140px",
       },
       screens: {
         xs: "450px",
       },
-      animation: {
-        "fade-up": "fadeUp 0.8s ease-out forwards",
-        float: "float 8s ease-in-out infinite",
-      },
       keyframes: {
         fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+        travel: {
+          "0%": { offsetDistance: "0%", opacity: "0" },
+          "5%": { opacity: "1" },
+          "95%": { opacity: "1" },
+          "100%": { offsetDistance: "100%", opacity: "0" },
         },
+      },
+      animation: {
+        "fade-up": "fadeUp 0.7s ease-out forwards",
+        travel: "travel 3.2s linear infinite",
       },
     },
   },

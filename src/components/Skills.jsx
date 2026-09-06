@@ -1,44 +1,34 @@
 import { motion } from "framer-motion";
-import { skillGroups } from "../constants";
+import { skillLayers } from "../constants";
 
 const Skills = () => {
   return (
-    <section className="relative px-6 pb-16 sm:px-10 sm:pb-20">
-      <div className="mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="card"
-        >
-          <h2 className="section-title">Tech Stack</h2>
-          <p className="mt-2 text-sm text-slate-soft">
-            Tools and technologies I work with across AI, cloud, and backend systems.
-          </p>
+    <section id="stack" className="py-[76px]">
+      <span className="hash-span">&nbsp;</span>
+      <div className="wrap">
+        <div className="mb-9">
+          <div className="section-tag indigo">03 · THE STACK</div>
+          <h2 className="type-section">How I think about AI infrastructure.</h2>
+        </div>
 
-          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {skillGroups.map((group, i) => (
-              <motion.div
-                key={group.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-accent">
-                  {group.label}
-                </h3>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <span key={item} className="tag-pill">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        <div className="flex flex-col gap-3">
+          {skillLayers.map((layer, i) => (
+            <motion.div
+              key={layer.name}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="grid gap-5 rounded-2xl border border-line bg-paper-2 px-[26px] py-[22px] sm:grid-cols-[220px_1fr]"
+            >
+              <div>
+                <p className="type-label text-indigo">{layer.name}</p>
+                <p className="type-meta mt-1 font-normal">{layer.sub}</p>
+              </div>
+              <p className="type-body text-sm leading-relaxed">{layer.items}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

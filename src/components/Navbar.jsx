@@ -3,24 +3,15 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, profile } from "../constants";
 
-const DownloadIcon = () => (
-  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-  </svg>
-);
-
-const sectionIds = navLinks.map((link) => link.id);
+const sectionIds = [...navLinks.map((link) => link.id), "contact"];
 
 const Navbar = () => {
   const [active, setActive] = useState("");
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 24);
-
-      const offset = 120;
+      const offset = 100;
       let current = "";
       for (const id of sectionIds) {
         const el = document.getElementById(id);
@@ -38,76 +29,68 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-4"
-      }`}
-    >
-      <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/92 backdrop-blur-[6px]">
+      <nav className="wrap flex h-[68px] items-center justify-between">
         <Link
           to="/"
-          className="relative z-10 font-display text-2xl font-bold text-ink"
+          className="font-display text-lg font-bold text-ink no-underline"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          {profile.name.split(" ")[0].charAt(0)}.
+          {profile.name}
         </Link>
 
-        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 xl:gap-7 lg:flex">
+        <ul className="hidden items-center gap-[30px] md:flex">
           {navLinks.map((link) => (
             <li key={link.id}>
               <a
                 href={`#${link.id}`}
                 onClick={() => setActive(link.title)}
-                className={`whitespace-nowrap text-sm font-medium transition-colors ${
+                className={`type-nav no-underline transition-colors ${
                   active === link.title
-                    ? "text-accent"
-                    : "text-slate-soft hover:text-accent"
+                    ? "text-signal"
+                    : "text-ink-soft hover:text-signal"
                 }`}
               >
                 {link.title}
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={profile.links.resume}
+              download="Srinithi_K_Resume.pdf"
+              className="btn-pill"
+            >
+              Resume
+            </a>
+          </li>
         </ul>
 
-        <div className="relative z-10 flex items-center gap-3">
-          <a
-            href={profile.links.resume}
-            download="Srinithi_K_Resume.pdf"
-            className="btn-primary hidden lg:inline-flex"
-          >
-            <DownloadIcon />
-            Download Resume
-          </a>
-
-          <button
-            type="button"
-            aria-label="Toggle menu"
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span
-              className={`block h-0.5 w-5 bg-ink transition-transform ${
-                open ? "translate-y-2 rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-5 bg-ink transition-opacity ${
-                open ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-5 bg-ink transition-transform ${
-                open ? "-translate-y-2 -rotate-45" : ""
-              }`}
-            />
-          </button>
-        </div>
+        <button
+          type="button"
+          aria-label="Toggle menu"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span
+            className={`block h-0.5 w-5 bg-ink transition-transform ${
+              open ? "translate-y-2 rotate-45" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-5 bg-ink transition-opacity ${
+              open ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-5 bg-ink transition-transform ${
+              open ? "-translate-y-2 -rotate-45" : ""
+            }`}
+          />
+        </button>
       </nav>
 
       <AnimatePresence>
@@ -116,14 +99,14 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="absolute inset-x-0 top-full border-b border-gray-100 bg-white px-6 py-6 shadow-lg lg:hidden"
+            className="border-b border-line bg-paper px-6 py-6 md:hidden"
           >
             <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
-                    className="text-lg font-semibold text-ink"
+                    className="type-nav text-base text-ink no-underline"
                     onClick={() => {
                       setActive(link.title);
                       setOpen(false);
@@ -137,11 +120,10 @@ const Navbar = () => {
                 <a
                   href={profile.links.resume}
                   download="Srinithi_K_Resume.pdf"
-                  className="btn-primary mt-2"
+                  className="btn-pill mt-1 inline-flex"
                   onClick={() => setOpen(false)}
                 >
-                  <DownloadIcon />
-                  Download Resume
+                  Resume
                 </a>
               </li>
             </ul>

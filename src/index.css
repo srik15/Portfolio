@@ -13,90 +13,253 @@ html {
 }
 
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  @apply font-sans text-base font-normal leading-relaxed text-ink;
   background: var(--paper);
-  color: var(--ink);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
+h1,
+h2,
+h3 {
+  @apply font-display font-bold tracking-tight text-ink;
+}
+
+a {
+  color: var(--signal);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+}
+
 ::selection {
-  background: rgba(var(--accent-rgb), 0.2);
+  background: rgba(var(--signal-rgb), 0.18);
   color: var(--ink);
 }
 
 .hash-span {
-  margin-top: -96px;
-  padding-bottom: 96px;
+  margin-top: -80px;
+  padding-bottom: 80px;
   display: block;
 }
 
 @layer components {
-  .card {
-    @apply rounded-2xl bg-white p-6 sm:p-8;
-    box-shadow: 0 4px 24px rgba(17, 24, 39, 0.06);
+  /* —— Type scale ——
+     display → Space Grotesk (headings, labels, tags, meta)
+     sans    → IBM Plex Sans (body, nav, buttons)
+  */
+  .type-hero {
+    @apply font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl;
   }
 
-  .card-hover {
-    transition: box-shadow 0.25s ease;
+  .type-section {
+    @apply font-display text-3xl font-bold tracking-tight text-ink;
   }
 
-  .card-hover:hover {
-    box-shadow: 0 8px 32px rgba(93, 67, 218, 0.12);
+  .type-title {
+    @apply font-display text-lg font-bold leading-snug tracking-tight text-ink;
   }
 
-  .section-label {
-    @apply text-sm font-semibold uppercase tracking-wider text-accent;
+  .type-lede {
+    @apply font-sans text-lg font-normal leading-relaxed text-ink-soft;
   }
 
-  .section-title {
-    @apply font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl;
+  .type-body {
+    @apply font-sans text-base font-normal leading-relaxed text-ink-soft;
+  }
+
+  .type-nav {
+    @apply font-sans text-sm font-semibold;
+  }
+
+  .type-button {
+    @apply font-sans text-sm font-semibold;
+  }
+
+  .type-label {
+    @apply font-display text-xs font-semibold tracking-wide;
+  }
+
+  .type-meta {
+    @apply font-display text-xs font-medium text-muted;
+  }
+
+  .type-footer-link {
+    @apply font-sans text-sm font-medium text-ink-soft;
+  }
+
+  .wrap {
+    @apply mx-auto max-w-content px-6 sm:px-9;
+  }
+
+  .section-tag {
+    @apply type-label mb-3;
+  }
+
+  .section-tag.signal {
+    @apply text-signal;
+  }
+
+  .section-tag.amber {
+    @apply text-amber;
+  }
+
+  .section-tag.indigo {
+    @apply text-indigo;
+  }
+
+  .section-head h2 {
+    @apply type-section max-w-[600px];
+  }
+
+  .chip {
+    @apply rounded-md border border-line bg-paper px-2.5 py-1 font-display text-xs font-medium text-ink-soft;
+  }
+
+  .btn-round {
+    @apply type-button inline-flex items-center gap-2 rounded-pill px-6 py-3 no-underline transition-colors;
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg;
+    @apply bg-ink text-white;
   }
 
   .btn-primary:hover {
-    background-color: var(--accent-bright);
+    @apply bg-signal text-white no-underline;
   }
 
-  .btn-outline {
-    @apply inline-flex items-center gap-2 rounded-xl border-2 border-accent bg-white px-5 py-2.5 text-sm font-semibold text-accent transition-all;
+  .btn-ghost {
+    @apply border border-line bg-paper-2 text-ink;
   }
 
-  .btn-outline:hover {
-    background-color: var(--accent-light);
+  .btn-ghost:hover {
+    @apply border-ink no-underline;
   }
 
-  .tag-pill {
-    @apply rounded-full px-3 py-1 text-xs font-medium text-accent;
-    background-color: var(--accent-light);
+  .btn-pill {
+    @apply type-button rounded-pill bg-ink px-5 py-2.5 text-white no-underline transition-colors;
   }
 
-  .contact-pill {
-    @apply inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-slate-soft shadow-sm;
+  .btn-pill:hover {
+    @apply bg-signal text-white no-underline;
   }
 
-  .progress-track {
-    @apply h-2 w-full overflow-hidden rounded-full bg-fog;
+  .impact-grid {
+    @apply grid grid-cols-2 gap-3.5 md:grid-cols-4;
   }
 
-  .progress-fill {
-    @apply h-full rounded-full transition-all duration-1000;
-    background: linear-gradient(to right, var(--accent), var(--accent-bright));
+  .impact-cell {
+    @apply rounded-2xl border border-line bg-paper-2 px-[22px] py-6;
+  }
+
+  .impact-num {
+    @apply font-display text-3xl font-bold leading-none text-ink;
+  }
+
+  .impact-desc {
+    @apply mt-2 font-sans text-sm leading-snug text-ink-soft;
+  }
+
+  .hero-eyebrow {
+    @apply type-label mb-5 text-indigo;
+  }
+
+  .tile {
+    @apply flex min-h-[176px] flex-col justify-between rounded-card border border-transparent px-6 py-[26px];
+  }
+
+  .tile-label {
+    @apply type-label mb-2.5 uppercase;
+  }
+
+  .footer-heading {
+    @apply type-label mb-3 uppercase text-muted;
   }
 }
 
-.hero-ai-graphic {
-  width: min(100%, 420px);
+/* Hero pipeline card — lavender / indigo */
+.hero-card {
+  margin-top: 48px;
+  background: var(--pipeline-bg);
+  border: none;
+  border-radius: 24px;
+  padding: 32px 30px 28px;
+  overflow-x: auto;
+}
+
+.hero-card-label {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--indigo);
+  margin-bottom: 18px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+svg#pipe {
+  width: 100%;
+  min-width: 640px;
   height: auto;
+  display: block;
 }
 
-.timeline-line {
-  background: linear-gradient(
-    to bottom,
-    var(--accent),
-    rgba(var(--accent-rgb), 0.15)
-  );
+.node-box {
+  fill: #ffffff;
+  stroke: none;
+  stroke-width: 0;
+}
+
+.node-title {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+
+.node-sub {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 11px;
+  fill: #666666;
+}
+
+.flow-line {
+  stroke: var(--pipeline-line);
+  stroke-width: 1.6;
+  fill: none;
+}
+
+.pulse {
+  fill: var(--indigo);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pulse {
+    animation: travel 3.2s linear infinite;
+  }
+}
+
+@keyframes travel {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
 }
