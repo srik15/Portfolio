@@ -128,6 +128,9 @@ export const projects = [
       "A RAG-based voice bot for bedridden patients, combining conversational context with real-time sensor health data delivered through Firebase. Paper accepted at API Conference Publications.",
     building: false,
     accent: "signal",
+    tech: ["RAG", "Firebase", "Whisper", "Streamlit"],
+    href: null,
+    github: null,
   },
   {
     name: "Eco Vision",
@@ -136,6 +139,9 @@ export const projects = [
       "Comparative study of YOLOv7/v8/v9 on a wildlife camera-trap dataset, with manual polygon annotation in Roboflow and hyperparameter tuning across all three architectures.",
     building: false,
     accent: "amber",
+    tech: ["YOLO", "Roboflow", "Python", "Computer Vision"],
+    href: null,
+    github: "https://github.com/srik15/RBG-Team-Gamma",
   },
   {
     name: "Igniters",
@@ -144,6 +150,9 @@ export const projects = [
       "Real-time street-lighting automation with fault detection, integrating LDR, rain, gas, and humidity sensors through ESP8266 controllers into a Firebase backend.",
     building: false,
     accent: "indigo",
+    tech: ["Java", "Firebase", "ESP8266", "Android"],
+    href: "https://github.com/srik15/Igniters-project",
+    github: "https://github.com/srik15/Igniters-project",
   },
   {
     name: "In progress",
@@ -152,7 +161,37 @@ export const projects = [
       'Building a custom evaluation framework for agentic systems — faithfulness, hallucination rate, and retrieval precision/recall — to close the gap between "it works in a demo" and "it works in production."',
     building: true,
     accent: "muted",
+    tech: ["RAGAS", "LangGraph", "Evaluation"],
+    href: null,
+    github: null,
   },
+];
+
+export const technologies = [
+  { name: "Python", tone: "indigo" },
+  { name: "SQL", tone: "signal" },
+  { name: "JavaScript", tone: "amber" },
+  { name: "Kotlin", tone: "indigo" },
+  { name: "RAG", tone: "signal" },
+  { name: "LangGraph", tone: "indigo" },
+  { name: "Prompt Engineering", tone: "amber" },
+  { name: "Hybrid Retrieval", tone: "signal" },
+  { name: "YOLO", tone: "amber" },
+  { name: "FastAPI", tone: "indigo" },
+  { name: "Streamlit", tone: "signal" },
+  { name: "GCP / Vertex AI", tone: "indigo" },
+  { name: "PostgreSQL", tone: "signal" },
+  { name: "Firebase", tone: "amber" },
+  { name: "Docker", tone: "indigo" },
+  { name: "AWS", tone: "amber" },
+  { name: "Whisper", tone: "signal" },
+  { name: "LangSmith", tone: "indigo" },
+  { name: "RAGAS", tone: "signal" },
+  { name: "Model Armor", tone: "amber" },
+  { name: "LlamaGuard", tone: "indigo" },
+  { name: "React Native", tone: "signal" },
+  { name: "Roboflow", tone: "amber" },
+  { name: "Git", tone: "indigo" },
 ];
 
 export const skillLayers = [
@@ -187,6 +226,40 @@ export const skillLayers = [
   },
 ];
 
+export const education = {
+  degree: "B.E. Computer Science and Engineering",
+  school: "St. Joseph's College of Engineering (Anna University Affiliated)",
+  dates: "2021–2025",
+  detail: "CGPA 8.98/10.0",
+};
+
+export const certifications = [
+  {
+    name: "BEC Vantage Level B2",
+    provider: "Cambridge University",
+  },
+  {
+    name: "Google Cloud Computing Foundation (Elite — Silver)",
+    provider: "NPTEL · IIT Kharagpur (Top 5%)",
+  },
+  {
+    name: "Python for Data Science (Elite — Silver)",
+    provider: "NPTEL · IIT Madras",
+  },
+  {
+    name: "Computer Vision Onramp",
+    provider: "MATLAB · MathWorks",
+  },
+  {
+    name: "Introduction to Probability and Data with R",
+    provider: "Coursera · Duke University",
+  },
+  {
+    name: "Machine Learning and its Applications using Python",
+    provider: "EduxLabs with Mechanica · IIT Madras",
+  },
+];
+
 export const recognition = [
   {
     title:
@@ -210,11 +283,5 @@ export const recognition = [
     title: "Finalist, AnalyticaX — CFA Conclave, IIT Indore",
     highlight: "CFA Conclave, IIT Indore",
     meta: "MAR 2024",
-  },
-  {
-    title:
-      "B.E. Computer Science, St. Joseph's College of Engineering (Anna University Affiliated) — CGPA 8.98/10.0",
-    highlight: "B.E. Computer Science",
-    meta: "2021–2025",
   },
 ];

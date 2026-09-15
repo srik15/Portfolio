@@ -5,6 +5,7 @@ import {
   Experience,
   Projects,
   Skills,
+  TechStack,
   Recognition,
   Contact,
 } from "./components";
@@ -19,6 +20,7 @@ const App = () => {
           <Experience />
           <Projects />
           <Skills />
+          <TechStack />
           <Recognition />
           <Contact />
         </main>
