@@ -6,8 +6,8 @@ export const profile = {
   email: "srinithi15k@gmail.com",
   eyebrow: "AI ENGINEER · CHENNAI, INDIA",
   headline:
-    "AI systems that reason over real enterprise data — reliably, in production.",
-  lede: "I design retrieval and agent architectures for environments where hallucination isn't an option: hybrid search pipelines serving automotive technicians in real time, safety-guarded multi-agent systems on GCP, and evaluation harnesses that catch failure before it ships.",
+    "Retrieval and agent systems for enterprise data, built to hold up in production.",
+  lede: "I design and build RAG and multi-agent architectures where wrong answers have real costs — hybrid retrieval pipelines serving automotive technicians, safety-guarded agent orchestration on GCP, and evaluation harnesses that catch failures before they reach users.",
   contactHeadline:
     "Open to AI engineering roles building production-grade retrieval and agent systems.",
   footNote: "Open to remote and relocation.",
@@ -72,8 +72,8 @@ export const impactMetrics = [
     description: "Peer-reviewed publication on YOLO framework benchmarking",
   },
   {
-    value: "150+",
-    description: "DSA problems solved on LeetCode",
+    value: "[X]%",
+    description: "Reduction in technician lookup time after hybrid retrieval rollout",
   },
 ];
 
@@ -84,9 +84,10 @@ export const experiences = [
     date: "JUL 2025 — PRESENT",
     highlights: [
       "Architected the end-to-end design of a production RAG-based agentic platform for automotive OEM aftermarket, owning 3 features from design through deployment.",
-      "Designed a multi-agent conversational system in LangGraph, orchestrating structured and unstructured enterprise data.",
-      "Built a hybrid retrieval pipeline — dense embeddings + BM25 — for service-procedure XML on Vertex AI and Cloud Run, cutting technician lookup time and reducing service downtime.",
-      "Led architecture-validation sessions with Google's engineering team, and integrated LLM safety enforcement via Model Armor and LlamaGuard.",
+      "Owned 3 features end-to-end (design → deployment) on a production RAG-based agentic platform for automotive OEM aftermarket, serving [X] technicians / [X] requests per day.",
+      "Designed a multi-agent conversational system in LangGraph, orchestrating structured and unstructured enterprise data, reducing [manual escalation rate / turnaround time] by [X]%.",
+      "Built a hybrid retrieval pipeline — dense embeddings + BM25 — for service-procedure XML on Vertex AI and Cloud Run, improving retrieval [precision/recall/NDCG] from [X] to [Y] and cutting technician lookup time by [X]%.",
+      "Led architecture-validation sessions with Google's engineering team. Integrated LLM safety enforcement via Model Armor, achieving [X]% reduction in flagged unsafe outputs and [X] eval pass rate on RAGAS faithfulness metrics.",
     ],
     tech: [
       "GCP · VERTEX AI",
@@ -102,7 +103,7 @@ export const experiences = [
     role: "SDE Intern",
     date: "JAN — JUN 2025",
     highlights: [
-      "Rearchitected the metrics logging system for the Search app on Amazon Tablet devices, unifying collection across Kotlin (Android) and React Native.",
+      "Rearchitected the metrics logging system for the Search app on Amazon Tablet devices, unifying collection across Kotlin and React Native microservices of the application.",
       "Partnered across teams to validate a unified telemetry pipeline for long-term maintainability.",
     ],
     tech: ["KOTLIN", "REACT NATIVE", "AWS"],
@@ -116,7 +117,7 @@ export const experiences = [
       "Built an LSTM model to forecast future work orders at 10% loss; benchmarked against Weibull-RNN.",
       "Ran a comparative study of YOLOv8–v10 on 16K+ camera-trap images, hitting 95.6% precision — published in IEEE.",
     ],
-    tech: ["LSTM", "YOLO V7–V10", "ROBOFLOW"],
+    tech: ["LSTM", "YOLO V8–V10", "ROBOFLOW"],
   },
 ];
 
@@ -125,10 +126,10 @@ export const projects = [
     name: "Convo Buddy",
     meta: "RAG VOICE ASSISTANT · PUBLISHED RESEARCH",
     description:
-      "A RAG-based voice bot for bedridden patients, combining conversational context with real-time sensor health data delivered through Firebase. Paper accepted at API Conference Publications.",
+      "A RAG-based voice assistant for bedridden patients, combining conversational context with real-time sensor health data via Firebase and personal information gathered via mobile application. Achieved [X]s average response latency and [X]% grounding accuracy against a [Y]-question eval set. Paper accepted at API Conference Publications.",
     building: false,
     accent: "signal",
-    tech: ["RAG", "Firebase", "Whisper", "Streamlit"],
+    tech: ["RAG", "Firebase", "Whisper", "Streamlit", "Android"],
     href: null,
     github: null,
   },
@@ -136,11 +137,11 @@ export const projects = [
     name: "Eco Vision",
     meta: "COMPUTER VISION · 2023",
     description:
-      "Comparative study of YOLOv7/v8/v9 on a wildlife camera-trap dataset, with manual polygon annotation in Roboflow and hyperparameter tuning across all three architectures.",
+      "Comparative study of YOLOv8/v9/v10/v11 on a wildlife camera-trap dataset, with manual polygon annotation in Roboflow and hyperparameter tuning across all four models.",
     building: false,
     accent: "amber",
     tech: ["YOLO", "Roboflow", "Python", "Computer Vision"],
-    href: null,
+    href: "https://ieeexplore.ieee.org/document/10939902",
     github: "https://github.com/srik15/RBG-Team-Gamma",
   },
   {
@@ -275,7 +276,7 @@ export const recognition = [
   },
   {
     title:
-      "Finalist, Entrepreneurship Development Institute of India — Tamil Nadu Government",
+      "Semi-Finalist (Top 100 of 8000+ teams), Entrepreneurship Development Institute of India — Tamil Nadu Government",
     highlight: "Tamil Nadu Government",
     meta: "SEP 2024",
   },
