@@ -2,7 +2,6 @@ export const profile = {
   name: "Srinithi K",
   role: "AI Engineer",
   location: "Chennai, India",
-
   email: "srinithi15k@gmail.com",
   eyebrow: "AI ENGINEER · CHENNAI, INDIA",
   headline:
@@ -16,6 +15,8 @@ export const profile = {
     github: "https://github.com/srik15",
     kaggle: "https://kaggle.com/srinithikmk",
     leetcode: "https://leetcode.com/u/Sri15nithi/",
+    hackerrank: "https://www.hackerrank.com/profile/srikavikkayal",
+    skillrack: "https://www.skillrack.com/faces/resume.xhtml?id=391095&key=ea8a7a0cb5070c6fe07a73d135d097c7827aff6b",
     resume: "/SRINITHI_K_FlowCV_Resume_2026-07-16.pdf",
   },
 };

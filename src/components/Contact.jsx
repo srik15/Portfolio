@@ -37,12 +37,6 @@ const Contact = () => {
               >
                 {profile.email}
               </a>
-              <a
-                href={`tel:${profile.phone.replace(/\s/g, "")}`}
-                className="type-footer-link mb-2 block no-underline hover:text-signal"
-              >
-                {profile.phone}
-              </a>
             </div>
             <div>
               <h4 className="footer-heading">Elsewhere</h4>
@@ -82,11 +76,20 @@ const Contact = () => {
                 LeetCode
               </a>
               <a
-                href={profile.links.resume}
-                download="Srinithi_K_Resume.pdf"
+                href={profile.links.skillrack}
+                target="_blank"
+                rel="noreferrer"
                 className="type-footer-link mb-2 block no-underline hover:text-signal"
               >
-                Resume
+                Skillrack
+              </a>
+              <a
+                href={profile.links.hackerrank}
+                target="_blank"
+                rel="noreferrer"
+                className="type-footer-link mb-2 block no-underline hover:text-signal"
+              >
+                Hackerrank
               </a>
             </div>
             <div>
