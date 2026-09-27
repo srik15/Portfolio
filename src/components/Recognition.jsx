@@ -16,7 +16,7 @@ function TitleWithHighlight({ title, highlight }) {
 
 const ColumnHeading = ({ children }) => (
   <div className="mb-5 flex items-center gap-3">
-    <h3 className="font-display text-xs font-semibold uppercase tracking-[0.08em] text-ink">
+    <h3 className="font-display text-xs font-semibold uppercase leading-5 tracking-[0.08em] text-indigo">
       {children}
     </h3>
     <span className="h-px flex-1 bg-indigo/40" aria-hidden="true" />
