@@ -17,7 +17,7 @@ export const profile = {
     leetcode: "https://leetcode.com/u/Sri15nithi/",
     hackerrank: "https://www.hackerrank.com/profile/srikavikkayal",
     skillrack: "https://www.skillrack.com/faces/resume.xhtml?id=391095&key=ea8a7a0cb5070c6fe07a73d135d097c7827aff6b",
-    resume: "/SRINITHI_K_FlowCV_Resume_2026-07-16.pdf",
+    resume: `${import.meta.env.BASE_URL}SRINITHI_K_FlowCV_Resume_2026-07-16.pdf`,
   },
 };
 

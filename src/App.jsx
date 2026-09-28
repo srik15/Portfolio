@@ -22,8 +22,10 @@ const Home = () => (
 );
 
 const App = () => {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || undefined;
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <div className="relative min-h-screen bg-paper text-ink">
         <Navbar />
         <Routes>
