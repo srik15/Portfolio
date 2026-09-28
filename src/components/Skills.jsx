@@ -3,11 +3,10 @@ import { skillLayers } from "../constants";
 
 const Skills = () => {
   return (
-    <section id="stack" className="py-[76px]">
-      <span className="hash-span">&nbsp;</span>
+    <section className="py-[76px]">
       <div className="wrap">
         <div className="mb-9">
-          <div className="section-tag indigo">03 · THE STACK</div>
+          <div className="section-tag indigo">STACK I BUILD</div>
           <h2 className="type-section">How I think about AI infrastructure.</h2>
         </div>
 

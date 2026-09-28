@@ -1,9 +1,9 @@
 const nodes = [
-  { x: 20, title: "query", sub: "technician input", cx: 90 },
-  { x: 180, title: "retrieval", sub: "dense + BM25", cx: 250 },
+  { x: 20, title: "query", sub: "User Input", cx: 90 },
+  { x: 180, title: "retrieval", sub: "Dense + BM25", cx: 250 },
   { x: 340, title: "orchestration", sub: "LangGraph agents", cx: 410 },
   { x: 500, title: "safety layer", sub: "Model Armor", cx: 570 },
-  { x: 660, title: "generation", sub: "grounded response", cx: 730 },
+  { x: 660, title: "generation", sub: "Grounded Response", cx: 730 },
 ];
 
 const HeroPipeline = () => (

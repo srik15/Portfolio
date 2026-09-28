@@ -22,9 +22,13 @@ export const profile = {
 };
 
 export const navLinks = [
-  { id: "work", title: "Experience" },
-  { id: "systems", title: "Systems" },
-  { id: "stack", title: "Stack" },
+  { id: "work", title: "Experience", href: "/#work" },
+  { id: "systems", title: "Systems", href: "/#systems" },
+  {
+    id: "what-i-think",
+    title: "What I Think",
+    to: "/what-i-think-about-ai-stack",
+  },
 ];
 
 export const exploreTiles = [
@@ -51,7 +55,7 @@ export const exploreTiles = [
     title: "How I think about the AI stack",
     description:
       "Application, orchestration, retrieval, safety, infra — mapped layer by layer.",
-    href: "#stack",
+    href: "/what-i-think-about-ai-stack",
     linkText: "See the stack →",
     tone: "indigo",
   },

@@ -60,7 +60,7 @@ const Recognition = () => {
     >
       <div className="wrap">
         <div className="mb-10">
-          <div className="section-tag signal">05 · CREDENTIALS</div>
+          <div className="section-tag signal">04 · CREDENTIALS</div>
           <h2 className="type-section">Education, certifications &amp; recognition.</h2>
         </div>
 

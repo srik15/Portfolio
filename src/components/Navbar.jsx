@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, profile } from "../constants";
 
-const sectionIds = [...navLinks.map((link) => link.id), "contact"];
+const hashSectionIds = navLinks.filter((link) => link.href).map((link) => link.id);
 
 const Navbar = () => {
+  const location = useLocation();
   const [active, setActive] = useState("");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    if (location.pathname === "/what-i-think-about-ai-stack") {
+      setActive("What I Think");
+      return undefined;
+    }
+
     const onScroll = () => {
       const offset = 100;
       let current = "";
-      for (const id of sectionIds) {
+      for (const id of [...hashSectionIds, "contact"]) {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= offset) {
           current = id;
@@ -21,12 +27,26 @@ const Navbar = () => {
       }
       const match = navLinks.find((link) => link.id === current);
       if (match) setActive(match.title);
+      else if (!current) setActive("");
     };
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const timer = window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+      return () => window.clearTimeout(timer);
+    }
+
+    window.scrollTo(0, 0);
+    return undefined;
+  }, [location.pathname, location.hash]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/92 backdrop-blur-[6px]">
@@ -36,7 +56,7 @@ const Navbar = () => {
           className="font-display text-lg font-bold text-ink no-underline"
           onClick={() => {
             setActive("");
-            window.scrollTo(0, 0);
+            setOpen(false);
           }}
         >
           {profile.name}
@@ -45,17 +65,31 @@ const Navbar = () => {
         <ul className="hidden items-center gap-[30px] md:flex">
           {navLinks.map((link) => (
             <li key={link.id}>
-              <a
-                href={`#${link.id}`}
-                onClick={() => setActive(link.title)}
-                className={`type-nav no-underline transition-colors ${
-                  active === link.title
-                    ? "text-signal"
-                    : "text-ink-soft hover:text-signal"
-                }`}
-              >
-                {link.title}
-              </a>
+              {link.to ? (
+                <Link
+                  to={link.to}
+                  onClick={() => setActive(link.title)}
+                  className={`type-nav no-underline transition-colors ${
+                    active === link.title
+                      ? "text-signal"
+                      : "text-ink-soft hover:text-signal"
+                  }`}
+                >
+                  {link.title}
+                </Link>
+              ) : (
+                <Link
+                  to={link.href}
+                  onClick={() => setActive(link.title)}
+                  className={`type-nav no-underline transition-colors ${
+                    active === link.title
+                      ? "text-signal"
+                      : "text-ink-soft hover:text-signal"
+                  }`}
+                >
+                  {link.title}
+                </Link>
+              )}
             </li>
           ))}
           <li>
@@ -104,8 +138,8 @@ const Navbar = () => {
             <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <li key={link.id}>
-                  <a
-                    href={`#${link.id}`}
+                  <Link
+                    to={link.to || link.href}
                     className="type-nav text-base text-ink no-underline"
                     onClick={() => {
                       setActive(link.title);
@@ -113,7 +147,7 @@ const Navbar = () => {
                     }}
                   >
                     {link.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>

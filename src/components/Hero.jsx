@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { exploreTiles, profile } from "../constants";
-import HeroPipeline from "./HeroPipeline";
 
 const tileTone = {
   signal: {
@@ -69,18 +69,13 @@ const Hero = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-        >
-          <HeroPipeline />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.38 }}
           className="mt-12 grid gap-4 md:grid-cols-3"
         >
           {exploreTiles.map((tile) => {
             const tone = tileTone[tile.tone];
+            const linkClass = `type-button mt-3.5 inline-block no-underline ${tone.link}`;
+            const isRoute = tile.href.startsWith("/");
+
             return (
               <div key={tile.label} className={`tile ${tone.bg}`}>
                 <div>
@@ -88,12 +83,15 @@ const Hero = () => {
                   <h3 className="type-title mb-2">{tile.title}</h3>
                   <p className="type-body text-sm">{tile.description}</p>
                 </div>
-                <a
-                  href={tile.href}
-                  className={`type-button mt-3.5 inline-block no-underline ${tone.link}`}
-                >
-                  {tile.linkText}
-                </a>
+                {isRoute ? (
+                  <Link to={tile.href} className={linkClass}>
+                    {tile.linkText}
+                  </Link>
+                ) : (
+                  <a href={tile.href} className={linkClass}>
+                    {tile.linkText}
+                  </a>
+                )}
               </div>
             );
           })}

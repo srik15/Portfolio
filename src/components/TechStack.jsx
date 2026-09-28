@@ -13,7 +13,7 @@ const TechStack = () => {
       <span className="hash-span">&nbsp;</span>
       <div className="wrap">
         <div className="mb-9 text-center sm:text-left">
-          <div className="section-tag indigo">04 · TECHNOLOGIES</div>
+          <div className="section-tag indigo">03 · TECHNOLOGIES</div>
           <h2 className="type-section">Tools I reach for.</h2>
           <p className="type-body mt-3 max-w-xl">
             Languages, frameworks, and infrastructure I use to ship retrieval and
