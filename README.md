@@ -1,25 +1,5 @@
 # Srinithi K — Portfolio
 
-AI Systems Engineer portfolio built with React, Vite, Tailwind CSS, and Framer Motion.
+AI/ML Engineer experienced in enterprise AI systems, agentic workflows, hybrid retrieval, and computer vision. Skilled in Python, LangGraph, Google Cloud, and cloud-native microservices, with software engineering experience at Amazon and computer-vision research published through IEEE. Interested in applying reliable AI and intelligent software to industrial engineering and automation.
 
-## Colors
-
-Edit **`src/theme/palette.js`** to change site colors. Restart `npm run dev` after edits so Tailwind picks them up.
-
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-## Optional: EmailJS contact form
-
-Copy `.env.example` to `.env` and add your EmailJS keys. Without them, the contact form falls back to `mailto:`.
-
-## Build
-
-```bash
-npm run build
-npm run preview
-```
+[Click to view my Portfolio](https://srik15.github.io/Portfolio/)
