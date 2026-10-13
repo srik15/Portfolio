@@ -77,8 +77,8 @@ export const impactMetrics = [
     description: "Peer-reviewed publication on YOLO framework benchmarking",
   },
   {
-    value: "[X]%",
-    description: "Reduction in technician lookup time after hybrid retrieval rollout",
+    value: "5-sec P90",
+    description: "Rolled out a hybrid retrieval RAG assistant, achieving a response time for technician queries",
   },
 ];
 
